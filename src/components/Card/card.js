@@ -1,4 +1,5 @@
-import { CardContainer, CardInfo, CardTable, CardTableBody, CardTableCell, CardTableCellBold, CardTableRow, CardTitle } from "./styledCard"
+import CardRow from "../CardRow/cardRow";
+import { CardContainer, CardInfo, CardTable, CardTableBody, CardTitle } from "./styledCard"
 
 
 const Card = (props) => {
@@ -11,37 +12,15 @@ const Card = (props) => {
                         <CardTitle>{props.character.name}</CardTitle>
                         <CardTable>
                             <CardTableBody>
-                                <CardTableRow>
-                                    <CardTableCellBold>Height</CardTableCellBold>
-                                    <CardTableCell>{props.character.height}cm</CardTableCell>
-                                </CardTableRow>
-                                <CardTableRow>
-                                    <CardTableCellBold>Weight</CardTableCellBold>
-                                    <CardTableCell>{props.character.mass}kgs</CardTableCell>
-                                </CardTableRow>
-                                <CardTableRow>
-                                    <CardTableCellBold>Hair Color</CardTableCellBold>
-                                    <CardTableCell>{props.character.hair_color}</CardTableCell>
-                                </CardTableRow>
-                                <CardTableRow>
-                                    <CardTableCellBold>DOB</CardTableCellBold>
-                                    <CardTableCell>{props.character.birth_year}</CardTableCell>
-                                </CardTableRow>
+                                <CardRow title={'Height'} info={`${props.character.height}cm`} />
+                                <CardRow title={'Hair Color'} info={`${props.character.mass}kg`} />
+                                <CardRow title={'DOB'} info={props.character.birth_year} />
                                 {props.species &&
-                                    <CardTableRow>
-                                        <CardTableCellBold>Species</CardTableCellBold>
-                                        <CardTableCell>{props.species}</CardTableCell>
-                                    </CardTableRow>
+                                    <CardRow title={'Species'} info={props.species} />
                                 }
-                                <CardTableRow>
-                                    <CardTableCellBold>Films</CardTableCellBold>
-                                    <CardTableCell>{props.films}</CardTableCell>
-                                </CardTableRow>
+                                <CardRow title={'Films'} info={props.films} />
                                 {props.ships.length > 0 &&
-                                    <CardTableRow>
-                                        <CardTableCellBold>Starships Flown</CardTableCellBold>
-                                        <CardTableCell>{props.ships}</CardTableCell>
-                                    </CardTableRow>
+                                    <CardRow title={'Starhips Flown'} info={props.ships} />
                                 }
                             </CardTableBody>
                         </CardTable>
