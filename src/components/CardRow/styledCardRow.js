@@ -2,8 +2,6 @@ import styled from 'styled-components';
 
 export const CardTableRow = styled.tr`
 `
-export const CardTableBody = styled.tbody`
-`
 export const CardTableCellBold = styled.td`
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
