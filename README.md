@@ -10,10 +10,12 @@ This project is for you!
 
 This Star Wars search allows the user to search any character in the lexicon and learn various bits of information about them via the open SWAPI.  Make sure you type in a real character though, or you may receive a disappointing message.
 
-
 ### Technologies/Features
+
 React
 Styled-Components
+(Jest)
+(MSW)
 SWAPI handles the information
 
 ### Updates coming soon! (maybe)
