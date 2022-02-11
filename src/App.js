@@ -5,7 +5,7 @@ import Preloader from './components/Preloader/preloader';
 import Card from './components/Card/card';
 import api from './utilities/api';
 import ErrorResponse from './components/ErrorResponse/errorResponse';
-import { Page } from './components/page';
+import { Page } from './components/Styles/page';
 
 const App = () => {
 
@@ -24,7 +24,7 @@ const App = () => {
 
   const [isLoaderOpen, setIsLoaderOpen] = React.useState(false);
 
-  const [isCardOpen, setIsCardOpen] = React.useState(false);
+  const [isValidRes, setisValidRes] = React.useState(false);
 
   // ________________________________________________API functions
   const getSpecies = (data) => {
@@ -36,9 +36,10 @@ const App = () => {
 
   const getFilms = (data) => {
     data.results[0].films.map((film) => {
+      console.log(String(film));
       api.getInfo(String(film))
         .then(response => {
-          setFilms(oldFilms => [...oldFilms, response.title, ', ',])
+          setFilms(oldFilms => [...oldFilms, response.title, ', '])
         })
     })
   }
@@ -53,6 +54,8 @@ const App = () => {
   }
 
   const getCharacter = (input) => {
+    // reset film and ship information or these arrays will add new results on top of old ones
+    // with every new search
     setFilms([]);
     setShip([]);
     setIsLoaderOpen(true);
@@ -63,15 +66,31 @@ const App = () => {
         getFilms(response);
         getStarship(response);
         setIsErrorOpen(false);
-        setIsCardOpen(true);
+        setisValidRes(true);
       })
       .catch(error => {
         setIsErrorOpen(true);
-        console.log(error)
+        setisValidRes(false);
       })
       .finally(res => {
         setIsLoaderOpen(false);
       })
+  }
+
+  const setPage = () => {
+    if (isLoaderOpen) {
+      return <Preloader />
+    }
+    else if (isValidRes && !isErrorOpen) {
+      return <Card
+        character={character}
+        species={species}
+        films={films}
+        ships={ship} />
+    }
+    else if (!isValidRes && isErrorOpen) {
+      return <ErrorResponse />
+    }
   }
 
   return (
@@ -79,15 +98,23 @@ const App = () => {
       <Hero
         getCharacter={getCharacter}
       />
-      {isLoaderOpen && <Preloader />}
-      {isErrorOpen && <ErrorResponse />}
-      {isCardOpen &&
-        <Card
-          character={character}
-          species={species}
-          films={films}
-          ships={ship} />
-      }
+      {setPage()}
+
+      {/* The following could also work to determine how the page is set, but using an if/else function
+      seemed cleaner */}
+      {/* --------------------------------------------------------------- */}
+      {/* {isLoaderOpen ?
+        <Preloader /> :
+        isValidRes && !isErrorOpen ?
+          <Card
+            character={character}
+            species={species}
+            films={films}
+            ships={ship} /> :
+          !isValidRes && isErrorOpen && <ErrorResponse />
+      } */}
+      {/* ------------------------------------------------------------------ */}
+
     </Page>
   );
 }

@@ -7,7 +7,7 @@ const ErrorResponse = () => {
         <MessageContainer>
             <MessageImage src={image} />
             <MessageText>
-                These are not the droids you are looking for. Try another search.
+                This is not the droid you are looking for. Try another search.
             </MessageText>
         </MessageContainer>
     )

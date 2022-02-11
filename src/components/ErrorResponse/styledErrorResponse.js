@@ -2,12 +2,14 @@ import styled from 'styled-components';
 
 export const MessageContainer = styled.section`
     width: 100vw;
+    background: black;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 
     @media (max-width: 525px) {
         flex-direction: column;
+        padding-top: 30px;
     }
 `
 export const MessageImage = styled.img`
@@ -15,7 +17,7 @@ export const MessageImage = styled.img`
     height: 20vw;
 
     @media (max-width: 525px) {
-        margin: auto;
+        margin: 0 auto 25px auto;
         height: 30vw;
     }
 `

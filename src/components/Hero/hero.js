@@ -25,6 +25,7 @@ const Hero = (props) => {
             </HeroSubtitle>
             <HeroInputWrapper>
                 <HeroInput
+                type='text'
                 onChange={handleChange}
                 />
                 <HeroButton

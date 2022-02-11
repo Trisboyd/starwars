@@ -27,18 +27,22 @@ const Card = (props) => {
                                     <CardTableCellBold>DOB</CardTableCellBold>
                                     <CardTableCell>{props.character.birth_year}</CardTableCell>
                                 </CardTableRow>
-                                <CardTableRow>
-                                    <CardTableCellBold>Species</CardTableCellBold>
-                                    <CardTableCell>{props.species}</CardTableCell>
-                                </CardTableRow>
+                                {props.species &&
+                                    <CardTableRow>
+                                        <CardTableCellBold>Species</CardTableCellBold>
+                                        <CardTableCell>{props.species}</CardTableCell>
+                                    </CardTableRow>
+                                }
                                 <CardTableRow>
                                     <CardTableCellBold>Films</CardTableCellBold>
                                     <CardTableCell>{props.films}</CardTableCell>
                                 </CardTableRow>
-                                <CardTableRow>
-                                    <CardTableCellBold>Starships Flown</CardTableCellBold>
-                                    <CardTableCell>{props.ships}</CardTableCell>
-                                </CardTableRow>
+                                {props.ships.length > 0 &&
+                                    <CardTableRow>
+                                        <CardTableCellBold>Starships Flown</CardTableCellBold>
+                                        <CardTableCell>{props.ships}</CardTableCell>
+                                    </CardTableRow>
+                                }
                             </CardTableBody>
                         </CardTable>
                     </CardInfo>

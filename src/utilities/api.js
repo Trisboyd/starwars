@@ -36,7 +36,9 @@ class API {
 }
 
 const api = new API({
-    baseUrl: "https://swapi.py4e.com/api"
+    // old Api, not sure when this changed but it was in the last month
+    // baseUrl: "https://swapi.py4e.com/api"
+    baseUrl: "https://swapi.dev/api"
 });
 
 export default api;
