@@ -12,10 +12,10 @@ This Star Wars search allows the user to search any character in the lexicon and
 
 ### Technologies/Features
 
-React
-Styled-Components
-(Jest)
-(MSW)
+React <>
+Styled-Components <>
+(Jest) <>
+(MSW) <>
 SWAPI handles the information
 
 ### Updates coming soon! (maybe)
