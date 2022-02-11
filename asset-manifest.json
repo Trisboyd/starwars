@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e6c13ad2.css",
+    "main.js": "/static/js/main.de61eb02.js",
+    "static/js/787.051a1ec0.chunk.js": "/static/js/787.051a1ec0.chunk.js",
+    "static/media/hyperspeed.jpg": "/static/media/hyperspeed.d9f518ef8df645c2ba5d.jpg",
+    "static/media/tatooine-background.jpg": "/static/media/tatooine-background.cf64ea01dfd4f90ffead.jpg",
+    "static/media/stormtroops.jpg": "/static/media/stormtroops.a7fa653cc974d5e549ce.jpg",
+    "static/media/Roboto-Regular.ttf": "/static/media/Roboto-Regular.a8d6ac03c7b96b7acb62.ttf",
+    "static/media/Roboto-Bold.ttf": "/static/media/Roboto-Bold.75371f53f06181df75f1.ttf",
+    "static/media/c3po.jpg": "/static/media/c3po.9b960d47ee2c97ee75d6.jpg",
+    "static/media/Starjhol.ttf": "/static/media/Starjhol.c247ee6825d52f9d0862.ttf",
+    "static/media/Starjedi.ttf": "/static/media/Starjedi.8d577dc1e1755c4860f3.ttf",
+    "index.html": "/index.html",
+    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
+    "main.de61eb02.js.map": "/static/js/main.de61eb02.js.map",
+    "787.051a1ec0.chunk.js.map": "/static/js/787.051a1ec0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.de61eb02.js"
+  ]
+}
