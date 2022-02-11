@@ -16,6 +16,5 @@ React
 Styled-Components
 SWAPI handles the information
 
-### Updates coming soon!
-API gateway
-Unit/integration testing
+### Updates coming soon! (maybe)
+Effective unit testing
